@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>How to Check if File is ASCII or Binary in PHP - Stack Overflow</title>
+<link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+<link rel="apple-touch-icon" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+<link rel="stylesheet" type="text/css" href="http://sstatic.net/stackoverflow/all.css?v=0c67cee5e456">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://sstatic.net/js/master.min.js?v=0d404b46476d"></script>
+
+
+    <link rel="canonical" href="http://stackoverflow.com/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to Check if File is ASCII or Binary in PHP'" href="/feeds/question/632685">
+    <script src="http://sstatic.net/js/question.js?v=295ea969376b" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,questionId:632685});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","serverTime":1303392043,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"92511d93975768383977f9e0c84bcd37","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"dcf6d862901d","js/moderator.js":"3adc1f43ac02"});
+    </script>
+
+</head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" href="http://stackexchange.com">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="/users/login?returnurl=%2fquestions%2f632685%2fhow-to-check-if-file-is-ascii-or-binary-in-php">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com">meta</a>
+ <span class="lsep">|</span>
+<a href="/about">about</a>
+ <span class="lsep">|</span>
+<a href="/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="140" size="28" value="search">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php" class="question-hyperlink">How to Check if File is ASCII or Binary in PHP</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1">
+    </div>
+
+    
+    <table>
+    <tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input type="hidden" value="632685">
+    <a class="vote-up-off" title="This question is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This question is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>Is there a quick, simple way to check if a file is ASCII or binary with PHP?</p>
+
+<p><strong>DUPLICATE</strong> <a href="http://stackoverflow.com/questions/620993/determining-binary-text-file-type">http://stackoverflow.com/questions/620993/determining-binary-text-file-type</a></p>
+
+            </div>            
+            <div class="post-taglist">
+                <a href="/questions/tagged/php" class="post-tag" title="show questions tagged 'php'" rel="tag">php</a> 
+            </div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/q/632685" title="short permalink to this question" id="link-post-632685">link</a><span class="lsep">|</span><a href="/posts/632685/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-632685" title="flag this post for serious problems or moderator attention">flag</a></div>
+            </td>
+            <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="/posts/632685/revisions" title="show all edits to this post"><span title="2009-03-10 23:30:24Z" class="relativetime">Mar 10 '09 at 23:30</span></a></div><div class="user-gravatar32"><a href="/users/21838/pyrolistical"><img src="http://www.gravatar.com/avatar/b2896eaafd7ead3a3063a9162aa1dcce?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/21838/pyrolistical">Pyrolistical</a><br><span class="reputation-score" title="reputation score">5,569</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="22 silver badges"><span class="badge2"></span><span class="badgecount">22</span></span><span title="46 bronze badges"><span class="badge3"></span><span class="badgecount">46</span></span></div></div>            </td>
+                        
+
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2009-03-10 23:24:21Z" class="relativetime">Mar 10 '09 at 23:24</span></div><div class="user-gravatar32"><a href="/users/12930/davethegr8"><img src="http://www.gravatar.com/avatar/0f173a1a13174cbf5ae9683c3445d8ba?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/12930/davethegr8">davethegr8</a><br><span class="reputation-score" title="reputation score">3,366</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span></div></div>
+                <br class="cbt">
+                <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 9 of 11 eligible questions">82% accept rate</div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </td>
+    </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-632685" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-445736" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">This has been asked before, but I always wonder, why do you care if its ascii or binary?</span> &ndash;&nbsp;<a href="/users/21838/pyrolistical" title="5569 reputation" class="comment-user">Pyrolistical</a> <span class="comment-date"><span title="2009-03-10 23:28:45Z">Mar 10 '09 at 23:28</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-445740" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Similar, but not a duplicate. This one has an easy, technical answer, whereas the supposed identical question is quite harder. There&#39;s a big difference between asking whether a file is in encoding X, or in any encoding at all.</span> &ndash;&nbsp;<a href="/users/18515/devin-jeanpierre" title="6193 reputation" class="comment-user">Devin Jeanpierre</a> <span class="comment-date"><span title="2009-03-10 23:32:59Z">Mar 10 '09 at 23:32</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-445753" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Nope read it again, those types were only examples.  He&#39;s looking for the same thing binary vs text</span> &ndash;&nbsp;<a href="/users/21838/pyrolistical" title="5569 reputation" class="comment-user">Pyrolistical</a> <span class="comment-date"><span title="2009-03-10 23:37:58Z">Mar 10 '09 at 23:37</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-445806" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">It&#39;s not a duplicate, since that is a general question (more a theoretical question), and this is for a specific language (practical use). In any case, what I ended up doing is below.</span> &ndash;&nbsp;<a href="/users/12930/davethegr8" title="3366 reputation" class="comment-user owner">davethegr8</a> <span class="comment-date"><span title="2009-03-11 00:02:12Z">Mar 11 '09 at 0:02</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    
+    </table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>2 Answers</h2>
+            <div id="tabs">
+                <a href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php?tab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php?tab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php?tab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+  
+    <a name="632695"></a>
+    <div id="answer-632695" class="answer" >
+        <table>
+        <tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="632695">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>Since ASCII is just an encoding for text, with binary representation, not really. You could check that all bytes are less than 128, but even this wouldn't guarantee that it was intended to be decoded as ASCII. For all you know it's some crazy image format, or an entirely different text encoding that also has no use of all eight bits. It might suffice for your use, though. If you just want to check if a file is valid ASCII, even if it's not a "text file", it will definitely suffice.</p>
+</div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php/632695#632695" title="permalink to this answer" id="link-post-632695">link</a><span class="lsep">|</span><a href="/posts/632695/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-632695" title="flag this post for serious problems or moderator attention">flag</a></div>
+            </td>
+            
+
+            <td align="right" class="post-signature">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-03-10 23:27:19Z" class="relativetime">Mar 10 '09 at 23:27</span></div><div class="user-gravatar32"><a href="/users/18515/devin-jeanpierre"><img src="http://www.gravatar.com/avatar/f9375b447dd668a10c19891379b9db2a?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/18515/devin-jeanpierre">Devin Jeanpierre</a><br><span class="reputation-score" title="reputation score">6,193</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span></div></div>
+            </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-632695" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+     
+
+
+    </table>
+</div>
+
+
+
+    <div class="everyonelovesstackoverflow" id="adzerk3">
+    </div>
+
+    
+  
+    <a name="632786"></a>
+    <div id="answer-632786" class="answer" >
+        <table>
+        <tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="632786">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>This only works for PHP>=5.3.0, and isn't 100% reliable, but hey, it's pretty darn close.</p>
+
+<pre><code>// return mime type ala mimetype extension
+$finfo = finfo_open(FILEINFO_MIME);
+
+//check to see if the mime-type starts with 'text'
+return substr(finfo_file($finfo, $filename), 4) == 'text';
+</code></pre>
+
+<p><a href="http://us.php.net/manual/en/ref.fileinfo.php" rel="nofollow">http://us.php.net/manual/en/ref.fileinfo.php</a></p>
+</div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/questions/632685/how-to-check-if-file-is-ascii-or-binary-in-php/632786#632786" title="permalink to this answer" id="link-post-632786">link</a><span class="lsep">|</span><a href="/posts/632786/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-632786" title="flag this post for serious problems or moderator attention">flag</a></div>
+            </td>
+            
+
+            <td align="right" class="post-signature owner">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-03-11 00:08:34Z" class="relativetime">Mar 11 '09 at 0:08</span></div><div class="user-gravatar32"><a href="/users/12930/davethegr8"><img src="http://www.gravatar.com/avatar/0f173a1a13174cbf5ae9683c3445d8ba?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/12930/davethegr8">davethegr8</a><br><span class="reputation-score" title="reputation score">3,366</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span></div></div>
+            </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-632786" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+     
+
+
+    </table>
+</div>
+
+
+    
+    <a name='new-answer'></a>
+    <form id="post-form" action="/questions/632685/answer/submit" method="post" >
+        <h2 class="space">Your Answer</h2>
+
+<script type="text/javascript">
+    $(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+
+        lazyEditorReady('answer', true/* confirm navigation after wmd keypress */, "http://sstatic.net/Js/wmd.js?v=b502d08e02ba");
+    });  
+</script>
+
+
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"></div>
+        <textarea id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="92511d93975768383977f9e0c84bcd37">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="/users/login?returnurl=%2fquestions%2f632685%2fhow-to-check-if-file-is-ascii-or-binary-in-php">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+            </div>
+        </td>
+    
+        </tr>
+        </table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" type="submit" value="Post Your Answer" tabindex="110"></div>
+    </form>
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="/questions/tagged/php" class="post-tag" title="show questions tagged 'php'" rel="tag">php</a> 
+        or <a href="/questions/ask">ask your own question</a>.
+    </h2>
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="display:none">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="/about">about &raquo;</a>&nbsp;&nbsp;&nbsp;<a href="/faq">faq &raquo;</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="/questions/tagged/php" class="post-tag" title="show questions tagged 'php'" rel="tag">php</a>&nbsp;<span class="item-multiplier">&times;&nbsp;104552</span><br>
+</div> 
+        <p class="label-key">asked</p>
+        <p class="label-value" title="2009-03-10 23:24:21Z">2 years ago</p>
+        <p class="label-key">viewed</p>
+        <p class="label-value">1,299 times</p>
+        <p class="label-key">latest activity</p>
+        <p class="label-value"><a href="?lastactivity" class="lastactivity-link" title="2009-03-11 00:08:34Z">2 years ago</a></p>
+    </div>
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=php"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2">
+    </div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/Ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-linked">Linked</h4>
+    <div class="linked">
+    <div class="spacer">
+<a href="/questions/620993/determining-binary-text-file-type" class="question-hyperlink">Determining binary/text file type?</a>
+</div>
+
+    </div>
+    </div>
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="/questions/277521/how-to-identify-the-file-content-is-in-ascii-or-binary" class="question-hyperlink">How to identify the file content is in ASCII or binary?</a>
+</div>
+<div class="spacer">
+<a href="/questions/296400/how-to-check-if-file-is-ascii-or-binary-in-c" class="question-hyperlink">How to Check if File is ASCII or Binary in C++</a>
+</div>
+<div class="spacer">
+<a href="/questions/310714/how-to-check-file-types-of-uploaded-files-in-php" class="question-hyperlink">How to check file types of uploaded files in PHP?</a>
+</div>
+<div class="spacer">
+<a href="/questions/946418/how-to-check-if-user-uploaded-a-file-in-php" class="question-hyperlink">How to check if user uploaded a file in PHP?</a>
+</div>
+<div class="spacer">
+<a href="/questions/1130659/how-to-convert-manipulate-binary-file-to-ascii-file" class="question-hyperlink">How to convert/manipulate BINARY file to ASCII file ?</a>
+</div>
+<div class="spacer">
+<a href="/questions/1828500/php-check-if-file-exist" class="question-hyperlink">php check if file exist</a>
+</div>
+<div class="spacer">
+<a href="/questions/1845197/convert-php-file-to-binary" class="question-hyperlink">Convert PHP file to binary</a>
+</div>
+<div class="spacer">
+<a href="/questions/2117396/how-to-check-a-file-path-is-an-image-or-not-in-php" class="question-hyperlink">how to check a file path is an image or not in php?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2167791/php-check-binary-string-running-into-errors-here" class="question-hyperlink">PHP: Check binary string, running into errors here..</a>
+</div>
+<div class="spacer">
+<a href="/questions/2200553/reading-binary-code-of-a-file-in-php" class="question-hyperlink">reading binary code of a file&hellip;in PHP</a>
+</div>
+<div class="spacer">
+<a href="/questions/2210408/change-ascii-transfer-mode-to-binary" class="question-hyperlink">Change ASCII Transfer Mode To Binary</a>
+</div>
+<div class="spacer">
+<a href="/questions/2224555/how-to-check-if-file-exists-without-the-extension-in-php" class="question-hyperlink">How to check if file exists without the extension in PHP?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2692536/how-to-check-if-file-is-php" class="question-hyperlink">how to check if file is php?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3074527/how-to-check-whether-file-is-image-or-video-type-in-php-version-5-2-9" class="question-hyperlink">how to check whether file is image or video type in php version 5.2.9?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3419746/php-forcedownload-on-my-own-server-check-if-file-exists" class="question-hyperlink">php: forcedownload on my own server - check if file exists?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3847277/php-check-if-a-file-exists-on-a-server" class="question-hyperlink">PHP: Check if a file exists on a server</a>
+</div>
+<div class="spacer">
+<a href="/questions/3872877/how-to-check-if-uploaded-file-is-binary-file" class="question-hyperlink">How to check if uploaded file is binary file?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4187790/php-check-if-a-file-exists-in-a-folder" class="question-hyperlink">PHP - Check if a file exists in a folder</a>
+</div>
+<div class="spacer">
+<a href="/questions/4263192/file-url-check-in-php" class="question-hyperlink">File url check in php</a>
+</div>
+<div class="spacer">
+<a href="/questions/4373566/php-check-if-someone-chose-a-file" class="question-hyperlink">PHP Check if someone chose a file</a>
+</div>
+<div class="spacer">
+<a href="/questions/4545715/which-php-function-to-use-to-read-a-binary-file-into-a-string" class="question-hyperlink">Which PHP function to use to read a binary file into a string?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4781696/can-we-convert-an-audio-file-in-to-binary-in-php" class="question-hyperlink">Can we Convert an audio file in to binary in PHP</a>
+</div>
+<div class="spacer">
+<a href="/questions/4852767/how-can-i-check-if-a-file-exists-on-a-remote-server-using-php" class="question-hyperlink">How can I check if a file exists on a remote server using PHP?</a>
+</div>
+<div class="spacer">
+<a href="/questions/5224284/how-to-check-if-file-is-selected" class="question-hyperlink">How to check if file is selected</a>
+</div>
+<div class="spacer">
+<a href="/questions/5334840/convert-file-to-binary-string-with-php" class="question-hyperlink">Convert file to binary string with PHP</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="/feeds/question/632685" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="/posts/632685/ivc/3b06"></script>
+<noscript>
+    <div><img src="/posts/632685/ivc/3b06" class="dno" alt=""></div>
+</noscript>
+<div style="display:none" id="prettify-lang">lang-php</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="/about">about</a> |
+                <a href="/faq">faq</a> |
+                <span title="21 hours ago" class="new-blog-post">new</span> <a href="http://blog.stackoverflow.com">blog</a> |
+                    <a href="http://chat.stackoverflow.com">chat</a> |
+                <a href="http://data.stackexchange.com">data</a> |
+                <a href="http://itc.conversationsnetwork.org/series/stackoverflow.html">podcast</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team%40stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackoverflow.com">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackapps.com">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://careers.stackoverflow.com">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">&#9632;</span>&nbsp;<a href="http://serverfault.com">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">&#9632;</span>&nbsp;<a href="http://superuser.com">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">&#9632;</span>&nbsp;<a href="http://meta.stackoverflow.com">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">&#9632;</span>&nbsp;<a href="http://area51.stackexchange.com">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">&#9632;</span>&nbsp;<a href="http://webapps.stackexchange.com">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">&#9632;</span>&nbsp;<a href="http://gaming.stackexchange.com">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">&#9632;</span>&nbsp;<a href="http://askubuntu.com">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">&#9632;</span>&nbsp;<a href="http://webmasters.stackexchange.com">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">&#9632;</span>&nbsp;<a href="http://cooking.stackexchange.com">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">&#9632;</span>&nbsp;<a href="http://gamedev.stackexchange.com">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">&#9632;</span>&nbsp;<a href="http://math.stackexchange.com">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">&#9632;</span>&nbsp;<a href="http://photo.stackexchange.com">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">&#9632;</span>&nbsp;<a href="http://stats.stackexchange.com">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">&#9632;</span>&nbsp;<a href="http://tex.stackexchange.com">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">&#9632;</span>&nbsp;<a href="http://english.stackexchange.com">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">&#9632;</span>&nbsp;<a href="http://cstheory.stackexchange.com">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">&#9632;</span>&nbsp;<a href="http://programmers.stackexchange.com">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">&#9632;</span>&nbsp;<a href="http://unix.stackexchange.com">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">&#9632;</span>&nbsp;<a href="http://apple.stackexchange.com">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">&#9632;</span>&nbsp;<a href="http://wordpress.stackexchange.com">wordpress</a>&nbsp;
+                        <span style="color:#b5cda4;font-size:140%">&#9632;</span>&nbsp;<a href="http://physics.stackexchange.com">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">&#9632;</span>&nbsp;<a href="http://diy.stackexchange.com">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">&#9632;</span>&nbsp;<a href="http://gis.stackexchange.com">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">&#9632;</span>&nbsp;<a href="http://electronics.stackexchange.com">electronics</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">&#9632;</span>&nbsp;<a href="http://android.stackexchange.com">android</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.4.21.3</div>
+            </div>
+            <div id="copyright">
+                site design / logo &copy; 2011 stack exchange inc; 
+                <a href="/questions-all">user contributions</a> licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    
+</body>
+</html>
